@@ -1,13 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="myNinjaApp">
   <head>
     <title>TheNetNinja Angular Playlist</title>
     <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
     <script src="app/lib/angularjs.min.js"></script>
+    <script src="app/app.js"></script>
   </head>
-  <body ng-init="ninjas=['Yoshi','Crystal','Shaun','Ryu']">
-    
-    <ul>
+  <body>
+
+    <div ng-controller=NinjaController>
+      
+      <p>{{ message }}</p>
+
+      <ul>
+        <li ng-repeat="ninja in ninjas">
+          {{ninja}}
+        </li>
+      </ul>
+
+    </div>
+
+    <!-- NG-INIT -->
+    <hr>
+    <ul ng-init="ninjas=['Yoshi','Crystal','Shaun','Ryu']">
       <li ng-repeat="ninja in ninjas">
         {{ninja}}
       </li>
