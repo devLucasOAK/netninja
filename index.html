@@ -6,25 +6,30 @@
     <script src="app/lib/angularjs.min.js"></script>
     <script src="app/app.js"></script>
   </head>
+
   <body>
 
     <header ng-include="'header.html'"></header>
 
-    <div ng-controller=NinjaController>
-      
-      <p>{{ message }}</p>
+    <div class="content">
 
-      <input type="text" ng-model="search">
+      <div ng-controller=NinjaController>
+        
+        <p>{{ message }}</p>
 
-      <ul>
-        <li ng-repeat="ninja in ninjas | orderBy: '-name' | filter: search"> 
-          {{ninja.name}} - {{ninja.rate | currency: "R$"}}
-        </li>
-      </ul>
+        <input type="text" ng-model="search">
 
+        <ul>
+          <li ng-repeat="ninja in ninjas | orderBy: '-name' | filter: search" ng-show="!ninja.available"> 
+            {{ninja.name}} - {{ninja.rate | currency: "R$"}}
+          </li>
+        </ul>
+
+      </div>
     </div>
+<!-- 
+     NG-INIT 
 
-    <!-- NG-INIT -->
     <hr>
     <ul ng-init="ninjas=['Yoshi','Crystal','Shaun','Ryu']">
       <li ng-repeat="ninja in ninjas">
@@ -32,9 +37,9 @@
       </li>
     </ul>
 
-    <!-- 2-WAY DATA BINDING -->
+    2-WAY DATA BINDING 
     <hr>
     <input type="text" ng-model="favMeat" placeholder="Enter your fav meat">
-    <p>Your fav meat is: {{ favMeat }}<p>
+    <p>Your fav meat is: {{ favMeat }}<p> -->
   </body>
 </html>
