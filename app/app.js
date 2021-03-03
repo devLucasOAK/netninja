@@ -17,7 +17,8 @@ myNinjaApp.controller('NinjaController', ['$scope', function($scope){
             name: $scope.newninja.name,
             belt: $scope.newninja.belt,
             rate: parseInt($scope.newninja.rate),
-            available: true
+            available: true,
+            thumb: "content/img/default.png"
         });
 
         $scope.newninja.name = "";
@@ -30,25 +31,29 @@ myNinjaApp.controller('NinjaController', ['$scope', function($scope){
             name: "Yoshi",
             belt: "green",
             rate: 50,
-            available: true
+            available: true,
+            thumb: "content/img/yoshi.png"
         },
         {
             name: "Crystal",
             belt: "yellow",
             rate: 30,
-            available: false
+            available: false,
+            thumb: "content/img/crystal.png"
         },
         {
             name: "Ryu",
             belt: "orange",
             rate: 10,
-            available: false
+            available: false,
+            thumb: "content/img/ryu.png"
         },
         {
             name: "Shaun",
             belt: "black",
             rate: 1000,
-            available: true
+            available: true,
+            thumb: "content/img/shaun.png"
         }
     ];
 
