@@ -18,7 +18,7 @@ myNinjaApp.config(['$routeProvider', function($routeProvider){
 
 
 
-myNinjaApp.controller('NinjaController', ['$scope', function($scope){
+myNinjaApp.controller('NinjaController', ['$scope','$http', function($scope, $http){
 
     // $scope.message = "he y'all";
     
@@ -43,40 +43,48 @@ myNinjaApp.controller('NinjaController', ['$scope', function($scope){
         $scope.newninja.belt = "";
         $scope.newninja.rate = "";
     }
+
+    $http.get('data/ninjas.json').success(function(data){
+        $scope.ninjas = data;
+    });
     
-    $scope.ninjas = [
-        {
-            name: "Yoshi",
-            belt: "green",
-            rate: 50,
-            available: true,
-            thumb: "content/img/yoshi.png"
-        },
-        {
-            name: "Crystal",
-            belt: "yellow",
-            rate: 30,
-            available: false,
-            thumb: "content/img/crystal.png"
-        },
-        {
-            name: "Ryu",
-            belt: "orange",
-            rate: 10,
-            available: false,
-            thumb: "content/img/ryu.png"
-        },
-        {
-            name: "Shaun",
-            belt: "black",
-            rate: 1000,
-            available: true,
-            thumb: "content/img/shaun.png"
-        }
-    ];
+//     $scope.ninjas = [
+//         {
+//             name: "Yoshi",
+//             belt: "green",
+//             rate: 50,
+//             available: true,
+//             thumb: "content/img/yoshi.png"
+//         },
+//         {
+//             name: "Crystal",
+//             belt: "yellow",
+//             rate: 30,
+//             available: false,
+//             thumb: "content/img/crystal.png"
+//         },
+//         {
+//             name: "Ryu",
+//             belt: "orange",
+//             rate: 10,
+//             available: false,
+//             thumb: "content/img/ryu.png"
+//         },
+//         {
+//             name: "Shaun",
+//             belt: "black",
+//             rate: 1000,
+//             available: true,
+//             thumb: "content/img/shaun.png"
+//         }
+//     ];
+
+//     console.log(angular.toJson($scope.ninjas)); //CONVERTE LISTA DE OBJETOS PARA JSON
+
+// }]);
 
 }]);
 
-myNinjaApp.run(function(){
-
-});
+// myNinjaApp.run(function(){
+// 
+// });
