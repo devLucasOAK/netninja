@@ -44,8 +44,8 @@ myNinjaApp.controller('NinjaController', ['$scope','$http', function($scope, $ht
         $scope.newninja.rate = "";
     }
 
-    $http.get('data/ninjas.json').success(function(data){
-        $scope.ninjas = data;
+    $http.get('data/ninjas.json').then(function(response){
+        $scope.ninjas = response.data;
     });
     
 //     $scope.ninjas = [
