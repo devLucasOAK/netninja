@@ -46,6 +46,11 @@ myNinjaApp.controller('NinjaController', ['$scope','$http', function($scope, $ht
 
     }
 
+    $scope.removeAll = function(){
+        
+        $scope.ninjas = [];
+    }
+
     $scope.addNinja = function(){
         
         $scope.ninjas.push({
