@@ -162,3 +162,8 @@ main.ng-enter.ng-enter-active{
   transition-duration: 0;
 }
 
+/* FORM VALLIDATION */
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+  border: 2px solid red;
+}
